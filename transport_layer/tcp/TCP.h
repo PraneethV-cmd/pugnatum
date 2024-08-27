@@ -55,8 +55,16 @@ typedef struct boundSocket
 
 // function declarations
 
+// client side
+
+/// @brief Does a TCP 3 way handshake.
+/// @param dest_ip_address
+/// @param dest_port
+/// @param src_port
+/// @return boundSocket pointer with socket information. NULL on failure.
 boundSocket *TCP_Connect(char *dest_ip_address, int dest_port, int src_port); // NULL on failure
 
-boundSocket *TCP_ListenAndAccept(int port); // return NULL if not possible; on given port
+// server side
+boundSocket *TCP_ListenAndAccept(int port);
 
 #endif
